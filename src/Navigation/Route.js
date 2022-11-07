@@ -15,8 +15,6 @@ export default function Route() {
         <Stack.Screen name={Navigationstrings.LOGIN} component={Screens.Login} />
         <Stack.Screen name={Navigationstrings.ADD_TASK} component={Screens.Addtask} />
         <Stack.Screen name={Navigationstrings.HOME} component={Screens.Home} />
-
-
       </Stack.Navigator>
     </NavigationContainer>
 

@@ -11,11 +11,30 @@ import Navigationstrings from '../../Navigation/Navigationstrings'
 
 
 export default function Signup({navigation,route}) {
-    const [value, setval] = useState('')
-    const [phone, setphone] = useState('')
-    const [email, setmail] = useState('')
-    const [pass, setpass] = useState('')
-    const onLogin=()=>{navigation.navigate(Navigationstrings.LOGIN)}
+    const [value, setval] = useState(null)
+    const [phone, setphone] = useState(null)
+    const [email, setmail] = useState(null)
+    const [pass, setpass] = useState(null)
+    const ondirLogin=()=>{navigation.navigate(Navigationstrings.LOGIN)}
+    const onLogin=()=>{
+        if(value===null){
+            alert("please Enter your Name")
+            return;
+        }
+        if(phone===null){
+            alert("please Enter your Phone number")
+            return;
+        }
+        if(email===null){
+            alert("please Enter your E-mail Address")
+            return;
+        }
+        if(pass===null){
+            alert("please Enter your Password ")
+            return;
+        }
+        if(value !==null && phone===null && email===null && pass===null)
+        {navigation.navigate(Navigationstrings.LOGIN)}}
     return (
         <SafeAreaView style={styles.container}>
             <HeaderComp title="Todoist" />
@@ -36,14 +55,18 @@ export default function Signup({navigation,route}) {
                     placeholder="E-mail Address"
                     onChangeText={(val) => { setmail(val) }}
                 />
+             
                 <TextInputComp
                     value={pass}
                     placeholder="Password"
+                    secureTextEntry={true}
                     onChangeText={(val) => { setpass(val) }}
+                    img={imagePath.i_showpass}
                 />
+
                 <Text style={styles.forgetPass}>Forget Password</Text>
             </View>
-            <ButtonComp title="Sign Up"></ButtonComp>
+            <ButtonComp title="Sign Up" onPress={onLogin}></ButtonComp>
             <View style={{alignItems:'center'}}>
                 <Text style={styles.txtStyle}> OR </Text>
                 <Text style={{...styles.txtStyle,color:colorPath.GREY}}> Signup with</Text>
@@ -61,7 +84,7 @@ export default function Signup({navigation,route}) {
             </View>
         <View style={styles.signnupbtnView}>
         <Text style={styles.lastLine}> Already have an account?</Text>
-        <TouchableOpacity onPress={onLogin}>
+        <TouchableOpacity onPress={ondirLogin}>
           <Text style={styles.lastlinebtn}>Log in</Text>
         </TouchableOpacity>
       </View>

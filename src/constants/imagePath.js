@@ -11,5 +11,8 @@ export default{
     i_tick:require('../assets/images/iOS/ic_tick2.png'),
     i_account:require('../assets/images/iOS/ic_account.png'),
     i_group:require('../assets/images/iOS/Group.png'),
-    i_home:require('../assets/images/iOS/ic_home1.png')
+    i_home:require('../assets/images/iOS/ic_home1.png'),
+    i_tick2:require('../assets/images/iOS/ic_tick.png'),
+    i_showpass:require('../assets/images/iOS/eyeopen.png'),
+    i_hidepass:require('../assets/images/iOS/hidepassword.png'),
 }

@@ -32,7 +32,8 @@ export const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-around',
         marginHorizontal: moderateScale(16),
-        padding: moderateScale(10)
+        padding: moderateScale(10),
+        alignItems:'center'
     },
     signnupbtnView: {
         flexDirection: 'row',

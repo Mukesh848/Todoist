@@ -22,7 +22,7 @@ export const styles = StyleSheet.create({
         backgroundColor: colorPath.WHITE,
         margin: moderateScale(16),
         borderRadius: moderateScale(10),
-        padding:moderateScale(20)
+        padding: moderateScale(20)
 
     },
     line: {
@@ -43,24 +43,42 @@ export const styles = StyleSheet.create({
         marginHorizontal: moderateScale(16),
         borderRadius: moderateScale(10)
     },
-    dateTimeView:{
-        margin:moderateScale(16),
-        flexDirection:'row',
-        justifyContent:'space-around',
-        flex:1
-        
+    dateTimeView: {
+        margin: moderateScale(16),
+        flexDirection: 'row',
+        justifyContent: 'space-around',
+        flex: 1
+
     },
-    datetimebtn:{
-        backgroundColor:colorPath.WHITE,
-        height:moderateScale(40),
-        width:moderateScale(155),
-        justifyContent:'center',
-        alignItems:'center',
-        padding:moderateScale(5),
-        borderRadius:moderateScale(10),
-        flexDirection:'row'
+    datetimebtn: {
+        backgroundColor: colorPath.WHITE,
+        height: moderateScale(40),
+        width: moderateScale(155),
+        justifyContent: 'center',
+        alignItems: 'center',
+        padding: moderateScale(5),
+        borderRadius: moderateScale(10),
+        flexDirection: 'row'
     },
-    btnimg:{
-        marginRight:moderateScale(5)
+    btnimg: {
+        marginRight: moderateScale(5)
+    },
+    modalview:
+    {
+        height: 180,
+        width: moderateScale(230),
+        alignItems: 'center',
+        justifyContent: 'center', backgroundColor: colorPath.PURPLE, borderRadius: moderateScale(8),
+        padding: moderateScale(35)
+    },
+    modaltext:
+    {
+        color: colorPath.WHITE,
+        fontWeight: 'bold',
+        padding: 5
+    },
+    modalmain: {
+        justifyContent: 'center',
+        alignItems: "center"
     }
 });

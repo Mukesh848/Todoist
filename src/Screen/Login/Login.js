@@ -6,13 +6,15 @@ import { styles } from './styles'
 import TextInputComp from '../../Components/TextInputComp/TextInputComp'
 import ButtonComp from '../../Components/ButtonComp/ButtonComp'
 import Navigationstrings from '../../Navigation/Navigationstrings'
+import imagePath from '../../constants/imagePath'
 
 
 export default function Login({ navigation, route }) {
     const [email, setmail] = useState('')
     const [pass, setpass] = useState('')
-    const onSignup = () => { navigation.navigate(Navigationstrings.SIGNUP) }
+    const [showpass , setvisible]=useState(false)
 
+    const onSignup = () => { navigation.navigate(Navigationstrings.SIGNUP) }
     return (
         <SafeAreaView style={styles.conatiner}>
             <HeaderComp title="Todoist"></HeaderComp>
@@ -22,10 +24,14 @@ export default function Login({ navigation, route }) {
                     value={email}
                     placeholder="E-mail Address"
                     onChangeText={(val) => { setmail(val) }} />
-                <TextInputComp
+                 <TextInputComp
                     value={pass}
                     placeholder="Password"
-                    onChangeText={(val) => { setpass(val) }} />
+                    secureTextEntry={true}
+                    onChangeText={(val) => { setpass(val) }}
+                    img={imagePath.i_showpass}
+                />
+
                 <Text style={styles.forgetText}>Forget Password</Text>
             </View>
             <ButtonComp title="Log in" onPress={()=>{navigation.navigate(Navigationstrings.HOME)}}></ButtonComp>

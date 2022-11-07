@@ -1,15 +1,30 @@
 import { View, Text, Image, TouchableOpacity, FlatList } from 'react-native'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { styles } from './styles'
 import imagePath from '../../constants/imagePath'
-import colorPath from '../../constants/colorPath'
-import { moderateScale } from '../../styles/responsiveSize'
 import Navigationstrings from '../../Navigation/Navigationstrings'
 
-export default function Home({navigation , route}) {
-  const data=route.params
-  console.log("data from  add task screen",data)
+export default function Home({ navigation, route }) {
+
+  const [data, setdata] = useState([])
+  const fetchdata = () => {
+    const paramdata = route.params
+    if (!!paramdata) { setdata(paramdata) }
+  }
+  useEffect(() => {
+    fetchdata()
+  }, [route?.params])
+
+  const renderItemfun = ({ item, index }) => {
+    return (
+      <View style={styles.flatview}>
+        <Text style={styles.flatText}>{item.title}</Text>
+        <Text style={styles.flatText}>{item.notes}</Text>
+      </View>
+    )
+  }
+
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.headerView}>
@@ -22,6 +37,7 @@ export default function Home({navigation , route}) {
           <Image source={imagePath.i_tick} ></Image>
           <Text style={styles.taskComptext2} > 5/10</Text>
           <Text style={styles.taskComptext3} > Tasks completed</Text>
+          
         </View>
         <TouchableOpacity style={styles.viewtaskbtn}>
           <Text style={styles.viewtaskbtntxt}>View Tasks</Text>
@@ -38,19 +54,9 @@ export default function Home({navigation , route}) {
       </View>
       <View>
         <FlatList
-        style={{margin:16,padding:10,backgroundColor:colorPath.WHITE,borderRadius:10}}
-        data={data}
-        renderItem={({item,index})=>{
-          return(
-            <View>
-                <Text>{item.title.title}</Text>
-                <Text>{item.notes.notes}</Text>
-            </View>
-          )
-        }}
-       />
-
-
+          data={data}
+          renderItem={renderItemfun}
+        />
       </View>
       <View style={styles.dockView}>
         <View style={styles.dock}>
@@ -64,9 +70,8 @@ export default function Home({navigation , route}) {
           </View>
         </View>
       </View>
-      <TouchableOpacity style={styles.groupbtn} 
-      onPress={()=>
-      {navigation.navigate(Navigationstrings.ADD_TASK,[])}}><Image source={imagePath.i_group} /></TouchableOpacity>
+      <TouchableOpacity style={styles.groupbtn}
+        onPress={() => { navigation.navigate(Navigationstrings.ADD_TASK, data) }}><Image source={imagePath.i_group} /></TouchableOpacity>
     </SafeAreaView>
   )
 }

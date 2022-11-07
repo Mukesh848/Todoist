@@ -12,5 +12,8 @@ export const styles = StyleSheet.create({
         padding:moderateScale(14),
         borderWidth:0.15,
         borderRadius:moderateScale(10),
+        flexDirection:'row',
+        justifyContent:'space-between',
+        alignItems:'center',
     }
 });
