@@ -7,14 +7,15 @@ import TextInputComp from '../../Components/TextInputComp/TextInputComp'
 import ButtonComp from '../../Components/ButtonComp/ButtonComp'
 import colorPath from '../../constants/colorPath'
 import imagePath from '../../constants/imagePath'
-import { moderateScale } from '../../styles/responsiveSize'
+import Navigationstrings from '../../Navigation/Navigationstrings'
 
 
-export default function Signup() {
+export default function Signup({navigation,route}) {
     const [value, setval] = useState('')
     const [phone, setphone] = useState('')
     const [email, setmail] = useState('')
     const [pass, setpass] = useState('')
+    const onLogin=()=>{navigation.navigate(Navigationstrings.LOGIN)}
     return (
         <SafeAreaView style={styles.container}>
             <HeaderComp title="Todoist" />
@@ -60,7 +61,7 @@ export default function Signup() {
             </View>
         <View style={styles.signnupbtnView}>
         <Text style={styles.lastLine}> Already have an account?</Text>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={onLogin}>
           <Text style={styles.lastlinebtn}>Log in</Text>
         </TouchableOpacity>
       </View>

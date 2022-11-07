@@ -38,7 +38,9 @@ export const styles = StyleSheet.create(
         lastlinebtn:{
             color:colorPath.PURPLE,
              fontWeight:'bold'
-            }
+            },
+            dotstyle:{width:50,height:3,},
+            activedotstyle:{width:50,height:3,backgroundColor:colorPath.PURPLE}
 
         
     })

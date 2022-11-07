@@ -7,15 +7,20 @@ import imagePath from '../../constants/imagePath'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import ButtonComp from '../../Components/ButtonComp/ButtonComp'
 import Navigationstrings from '../../Navigation/Navigationstrings'
+import colorPath from '../../constants/colorPath'
 
-
-export default function Onboard({navigation,route}) {
-  const onpressSignup=()=>{navigation.navigate(Navigationstrings.SIGNUP)
-  }
+export default function Onboard({ navigation, route }) {
+  const onpressSignup = () => { navigation.navigate(Navigationstrings.SIGNUP) }
+  const onLogin = () => { navigation.navigate(Navigationstrings.LOGIN) }
   return (
     <SafeAreaView style={styles.container}>
       <HeaderComp title="Todoist" />
-      <Swiper style={styles.wrapper} showsButtons={false}>
+      <Swiper
+        style={styles.wrapper}
+        showsButtons={false}
+        dotStyle={styles.dotstyle}
+        activeDotStyle={styles.activedotstyle}
+      >
         <View style={styles.slideView}>
           <Image source={imagePath.Onboard_1}></Image>
           <Text style={styles.slideText}>Manage Tasks</Text>
@@ -36,11 +41,10 @@ export default function Onboard({navigation,route}) {
       <ButtonComp title="Sign Up" onPress={onpressSignup}></ButtonComp>
       <View style={styles.signnupbtnView}>
         <Text style={styles.lastLine}> Already have an account?</Text>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={onLogin}>
           <Text style={styles.lastlinebtn}>Log in</Text>
         </TouchableOpacity>
       </View>
     </SafeAreaView>
   )
 }
-

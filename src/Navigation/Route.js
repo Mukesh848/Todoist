@@ -12,6 +12,11 @@ export default function Route() {
       <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName={Navigationstrings.ONBOARD_SCREEN}>
         <Stack.Screen name={Navigationstrings.ONBOARD_SCREEN} component={Screens.Onboard} />
         <Stack.Screen name={Navigationstrings.SIGNUP} component={Screens.Signup} />
+        <Stack.Screen name={Navigationstrings.LOGIN} component={Screens.Login} />
+        <Stack.Screen name={Navigationstrings.ADD_TASK} component={Screens.Addtask} />
+        <Stack.Screen name={Navigationstrings.HOME} component={Screens.Home} />
+
+
       </Stack.Navigator>
     </NavigationContainer>
 
