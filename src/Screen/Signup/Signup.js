@@ -1,4 +1,4 @@
-import { View, Text, TextInputComponent, TouchableOpacity,Image } from 'react-native'
+import { View, Text, TouchableOpacity,Image } from 'react-native'
 import React, { useState } from 'react'
 import { styles } from './styles'
 import { SafeAreaView } from 'react-native-safe-area-context'
@@ -14,7 +14,9 @@ export default function Signup({navigation,route}) {
     const [value, setval] = useState(null)
     const [phone, setphone] = useState(null)
     const [email, setmail] = useState(null)
-    const [pass, setpass] = useState(null)
+    const [pass, setpass] = useState('')
+    const [showpass, setvisible] = useState(false)
+
     const ondirLogin=()=>{navigation.navigate(Navigationstrings.LOGIN)}
     const onLogin=()=>{
         if(value===null){
@@ -29,11 +31,11 @@ export default function Signup({navigation,route}) {
             alert("please Enter your E-mail Address")
             return;
         }
-        if(pass===null){
+        if(pass===''){
             alert("please Enter your Password ")
             return;
         }
-        if(value !==null && phone===null && email===null && pass===null)
+         if(value !==null && phone!==null && email!==null && pass!=='')
         {navigation.navigate(Navigationstrings.LOGIN)}}
     return (
         <SafeAreaView style={styles.container}>
@@ -59,9 +61,12 @@ export default function Signup({navigation,route}) {
                 <TextInputComp
                     value={pass}
                     placeholder="Password"
-                    secureTextEntry={true}
+                    secureTextEntry={showpass}
                     onChangeText={(val) => { setpass(val) }}
-                    img={imagePath.i_showpass}
+                    img1={imagePath.i_showpass}
+                    img2={imagePath.i_hidepass}
+                    img1Press={()=>{setvisible(!showpass)}}
+                    img2Press={()=>{setvisible(!showpass)}}
                 />
 
                 <Text style={styles.forgetPass}>Forget Password</Text>

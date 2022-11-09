@@ -1,20 +1,17 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import React from 'react'
-import Navigationstrings from './Navigationstrings';
-import * as Screens from "../Screen"
-
+import { useSelector } from 'react-redux';
+import AuthStack from './AuthStack';
+import MainStack from './MainStack';
 
 const Stack = createNativeStackNavigator()
 export default function Route() {
+  // const userData = useSelector(state=> state.userData)
   return (
     <NavigationContainer>
-      <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName={Navigationstrings.ONBOARD_SCREEN}>
-        <Stack.Screen name={Navigationstrings.ONBOARD_SCREEN} component={Screens.Onboard} />
-        <Stack.Screen name={Navigationstrings.SIGNUP} component={Screens.Signup} />
-        <Stack.Screen name={Navigationstrings.LOGIN} component={Screens.Login} />
-        <Stack.Screen name={Navigationstrings.ADD_TASK} component={Screens.Addtask} />
-        <Stack.Screen name={Navigationstrings.HOME} component={Screens.Home} />
+      <Stack.Navigator screenOptions={{ headerShown: false }}>
+    {true?MainStack(Stack):AuthStack(Stack)}
       </Stack.Navigator>
     </NavigationContainer>
 

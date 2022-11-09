@@ -3,5 +3,9 @@ export default {
     SIGNUP:"signupScreen",
     LOGIN:"loginScreen",
     ADD_TASK:'addtaskScreen',
-    HOME:"homeScreen"
+    HOME:"homeScreen",
+    PROFILE:"profileScreen",
+    CALENDER:"calenderScreen",
+    TIME:"TimeScreen",
+    BTABS:"bottomTabs"
 }

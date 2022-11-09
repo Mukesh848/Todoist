@@ -12,8 +12,21 @@ import imagePath from '../../constants/imagePath'
 export default function Login({ navigation, route }) {
     const [email, setmail] = useState('')
     const [pass, setpass] = useState('')
-    const [showpass , setvisible]=useState(false)
+    const [showpass, setvisible] = useState(false)
 
+    const onLogin = () => {
+        if (email === '') {
+            alert("Please enter your email")
+            return;
+        }
+        if (pass === '') {
+            alert("Please enter your Password")
+            return;
+        }
+        if (pass !== '' && email !== '') {
+            navigation.navigate(Navigationstrings.HOME)
+        }
+    }
     const onSignup = () => { navigation.navigate(Navigationstrings.SIGNUP) }
     return (
         <SafeAreaView style={styles.conatiner}>
@@ -24,17 +37,16 @@ export default function Login({ navigation, route }) {
                     value={email}
                     placeholder="E-mail Address"
                     onChangeText={(val) => { setmail(val) }} />
-                 <TextInputComp
+                <TextInputComp
                     value={pass}
                     placeholder="Password"
                     secureTextEntry={true}
                     onChangeText={(val) => { setpass(val) }}
                     img={imagePath.i_showpass}
                 />
-
                 <Text style={styles.forgetText}>Forget Password</Text>
             </View>
-            <ButtonComp title="Log in" onPress={()=>{navigation.navigate(Navigationstrings.HOME)}}></ButtonComp>
+            <ButtonComp title="Log in" onPress={() => { onLogin() }}></ButtonComp>
             <View style={styles.signnupbtnView}>
                 <Text style={styles.lastLine}> Dont't have an account?</Text>
                 <TouchableOpacity onPress={onSignup}>

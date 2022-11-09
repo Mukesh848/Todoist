@@ -10,20 +10,25 @@ export default function TextInputComp(
         txtInputStyle,
         onChangeText=()=>{},
         secureTextEntry,
-        img
+        img1,
+        img2,
+        img1Press=()=>{},
+        img2Press=()=>{}
+
     }
 ) {
   return (
     <View style={{...styles.txtInput,...txtInputStyle}}>
       <TextInput 
-      style={{flex:1,height:40}}
+      style={styles.txtInputst}
       value={value} 
       placeholder={placeholder}
       placeholderColor={colorPath.GREY}
       onChangeText={onChangeText}
       secureTextEntry={secureTextEntry}>
       </TextInput>
-      <TouchableOpacity><Image source={img} style={{height:20,width:20,tintColor:colorPath.GREY}}></Image></TouchableOpacity>
+    {{img1}?<TouchableOpacity><Image source={img1} style={styles.imgstyle}></Image></TouchableOpacity>
+      :<TouchableOpacity><Image source={img2} style={styles.imgstyle}></Image></TouchableOpacity>}
     </View>
   )
 }

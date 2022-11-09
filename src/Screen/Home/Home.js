@@ -3,7 +3,9 @@ import React, { useEffect, useState } from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { styles } from './styles'
 import imagePath from '../../constants/imagePath'
-import Navigationstrings from '../../Navigation/Navigationstrings'
+import * as Progress from 'react-native-progress';
+import colorPath from '../../constants/colorPath'
+import { moderateScale } from '../../styles/responsiveSize'
 
 export default function Home({ navigation, route }) {
 
@@ -31,18 +33,36 @@ export default function Home({ navigation, route }) {
         <Text style={styles.headerText1}>Hello Lorem !</Text>
         <Text style={styles.headerText2}>Let's start with todays tasks.</Text>
       </View>
-      <View style={styles.taskCompleted}>
-        <Text style={styles.taskComptext}>Daily Tasks</Text>
-        <View style={styles.tickimg}>
-          <Image source={imagePath.i_tick} ></Image>
-          <Text style={styles.taskComptext2} > 5/10</Text>
-          <Text style={styles.taskComptext3} > Tasks completed</Text>
-          
+      <View style={styles.progressmainview}>
+        <View style={styles.taskCompleted}>
+          <Text style={styles.taskComptext}>Daily Tasks</Text>
+          <View style={styles.tickimg}>
+            <Image source={imagePath.i_tick} ></Image>
+            <Text style={styles.taskComptext2} > 5/10</Text>
+            <Text style={styles.taskComptext3} > Tasks completed</Text>
+          </View>
+          <TouchableOpacity style={styles.viewtaskbtn}>
+            <Text style={styles.viewtaskbtntxt}>View Tasks</Text>
+          </TouchableOpacity>
         </View>
-        <TouchableOpacity style={styles.viewtaskbtn}>
-          <Text style={styles.viewtaskbtntxt}>View Tasks</Text>
-        </TouchableOpacity>
+        <View style={styles.progressStyle}>
+          <Progress.Circle
+            size={100}
+            indeterminate={false}
+            color={colorPath.PURPLE}
+            progress={moderateScale(0.7)}
+            showsText={true}
+            thickness={moderateScale(15)}
+            unfilledColor={colorPath.LIGHTGREY}
+            borderWidth={0}
+            strokeCap="round"
+          />
+        </View>
       </View>
+      <View>
+
+      </View>
+
       <View style={styles.TimeperiodView}>
         <Text style={styles.Timeperiod}>Daily</Text>
         <Text style={styles.Timeperiod}>Monthly</Text>
@@ -58,20 +78,6 @@ export default function Home({ navigation, route }) {
           renderItem={renderItemfun}
         />
       </View>
-      <View style={styles.dockView}>
-        <View style={styles.dock}>
-          <View style={styles.indock}>
-            <TouchableOpacity style={styles.dockicon}><Image source={imagePath.i_home}></Image></TouchableOpacity>
-            <TouchableOpacity style={styles.dockicon}><Image source={imagePath.i_time}></Image></TouchableOpacity>
-          </View>
-          <View style={styles.indock}>
-            <TouchableOpacity style={styles.dockicon}><Image source={imagePath.i_calender}></Image></TouchableOpacity>
-            <TouchableOpacity style={styles.dockicon}><Image source={imagePath.i_account}></Image></TouchableOpacity>
-          </View>
-        </View>
-      </View>
-      <TouchableOpacity style={styles.groupbtn}
-        onPress={() => { navigation.navigate(Navigationstrings.ADD_TASK, data) }}><Image source={imagePath.i_group} /></TouchableOpacity>
     </SafeAreaView>
   )
 }

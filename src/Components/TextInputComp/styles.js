@@ -1,4 +1,4 @@
-import { moderateScale } from "../../styles/responsiveSize";
+import { moderateScale, verticalScale } from "../../styles/responsiveSize";
 import { StyleSheet } from "react-native";
 import colorPath from "../../constants/colorPath";
 
@@ -10,10 +10,17 @@ export const styles = StyleSheet.create({
         marginBottom:moderateScale(10),
         backgroundColor:colorPath.WHITE,
         padding:moderateScale(14),
-        borderWidth:0.15,
         borderRadius:moderateScale(10),
         flexDirection:'row',
         justifyContent:'space-between',
         alignItems:'center',
-    }
+    },
+    imgstyle:{
+        height:verticalScale(20),
+        width:moderateScale(20),
+        tintColor:colorPath.GREY
+    },
+    txtInputst:{
+        flex:1,
+        height:verticalScale(40)}
 });

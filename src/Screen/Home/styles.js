@@ -103,8 +103,18 @@ export const styles = StyleSheet.create({
         borderRadius: moderateScale(10),
         marginHorizontal: moderateScale(16)
     },
-    flatText:{
-        color:colorPath.PURPLE,
-        fontWeight:'bold'
+    flatText: {
+        color: colorPath.PURPLE,
+        fontWeight: 'bold'
+    },
+    progressStyle: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center'
+    },
+    progressmainview:{
+        flexDirection:'row',
+        backgroundColor:colorPath.WHITE,
+        margin:moderateScale(16)
     }
 });
