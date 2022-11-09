@@ -112,9 +112,9 @@ export const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center'
     },
-    progressmainview:{
-        flexDirection:'row',
-        backgroundColor:colorPath.WHITE,
-        margin:moderateScale(16)
+    progressmainview: {
+        flexDirection: 'row',
+        backgroundColor: colorPath.WHITE,
+        margin: moderateScale(16)
     }
 });

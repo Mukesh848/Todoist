@@ -6,9 +6,12 @@ import imagePath from '../../constants/imagePath'
 import * as Progress from 'react-native-progress';
 import colorPath from '../../constants/colorPath'
 import { moderateScale } from '../../styles/responsiveSize'
+import { useSelector } from 'react-redux'
+import store from '../../redux/store'
 
 export default function Home({ navigation, route }) {
-
+  const rdata=useSelector(state => state.userdata)
+ 
   const [data, setdata] = useState([])
   const fetchdata = () => {
     const paramdata = route.params
@@ -62,7 +65,6 @@ export default function Home({ navigation, route }) {
       <View>
 
       </View>
-
       <View style={styles.TimeperiodView}>
         <Text style={styles.Timeperiod}>Daily</Text>
         <Text style={styles.Timeperiod}>Monthly</Text>
@@ -74,7 +76,7 @@ export default function Home({ navigation, route }) {
       </View>
       <View>
         <FlatList
-          data={data}
+          data={rdata}
           renderItem={renderItemfun}
         />
       </View>

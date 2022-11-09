@@ -1,5 +1,5 @@
 import { View, Text, TextInput, Image, TouchableOpacity} from 'react-native'
-import React from 'react'
+import React, { useState } from 'react'
 import colorPath from '../../constants/colorPath'
 import { styles } from './styles'
 
@@ -12,11 +12,15 @@ export default function TextInputComp(
         secureTextEntry,
         img1,
         img2,
-        img1Press=()=>{},
-        img2Press=()=>{}
-
     }
 ) {
+const[img , setImg]=useState(true)
+const[show, setShow]=useState(false)
+
+const oniconpress=()=>{
+  setImg(!img)
+  setShow(!show)
+}
   return (
     <View style={{...styles.txtInput,...txtInputStyle}}>
       <TextInput 
@@ -25,10 +29,10 @@ export default function TextInputComp(
       placeholder={placeholder}
       placeholderColor={colorPath.GREY}
       onChangeText={onChangeText}
-      secureTextEntry={secureTextEntry}>
+      secureTextEntry={show}>
       </TextInput>
-    {{img1}?<TouchableOpacity><Image source={img1} style={styles.imgstyle}></Image></TouchableOpacity>
-      :<TouchableOpacity><Image source={img2} style={styles.imgstyle}></Image></TouchableOpacity>}
+    <TouchableOpacity onPress={oniconpress}><Image source={img?img2:img1} style={styles.imgstyle}></Image></TouchableOpacity>
+    
     </View>
   )
 }

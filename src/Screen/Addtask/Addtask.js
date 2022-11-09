@@ -1,22 +1,25 @@
-import { View, Text, Image, TouchableOpacity, TextInput } from 'react-native'
+import { View, Text, Image, TouchableOpacity, TextInput, addons } from 'react-native'
 import React, { useState } from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import imagePath from '../../constants/imagePath'
 import { styles } from './styles'
 import ButtonComp from '../../Components/ButtonComp/ButtonComp'
-// import DatePicker from 'react-native-date-picker'
 import Modal from "react-native-modal";
 import Navigationstrings from '../../Navigation/Navigationstrings'
-import colorPath from '../../constants/colorPath'
-import * as Progress from 'react-native-progress';
+import store from '../../redux/store'
+import { addtodo } from '../../redux/action'
 
 export default function Addtask({ navigation, route }) {
-    // const [date, setDate] = useState(new Date())
-    // const [open, setOpen] = useState(false)
-    const prevData = route.params
+     
     const [openmodal, setmodal] = useState(false)
     const [title, settitle] = useState(null)
     const [notes, setnotes] = useState(null)
+
+    let onmodalclick=() =>
+    {       setmodal(!openmodal)
+            store.dispatch(addtodo(title,notes))
+            // navigation.navigate(Navigationstrings.HOME)
+    }
 
     let onAddbtn = () => {
         if (title === null) {
@@ -76,8 +79,7 @@ export default function Addtask({ navigation, route }) {
             <ButtonComp title="Add" onPress={onAddbtn}></ButtonComp>
             <Modal isVisible={openmodal} style={styles.modalmain} >
                 <TouchableOpacity onPress={() => {
-                    const currData = [{ title: title, notes: notes }]
-                    navigation.navigate(Navigationstrings.HOME, [...currData, ...prevData])
+                  onmodalclick()
                 }}
                     style={styles.modalview}>
                     <Image source={imagePath.i_tick2}></Image>

@@ -15,7 +15,7 @@ export default function Signup({navigation,route}) {
     const [phone, setphone] = useState(null)
     const [email, setmail] = useState(null)
     const [pass, setpass] = useState('')
-    const [showpass, setvisible] = useState(false)
+    const [showpass, setvisible] = useState(true)
 
     const ondirLogin=()=>{navigation.navigate(Navigationstrings.LOGIN)}
     const onLogin=()=>{
@@ -61,12 +61,9 @@ export default function Signup({navigation,route}) {
                 <TextInputComp
                     value={pass}
                     placeholder="Password"
-                    secureTextEntry={showpass}
                     onChangeText={(val) => { setpass(val) }}
                     img1={imagePath.i_showpass}
                     img2={imagePath.i_hidepass}
-                    img1Press={()=>{setvisible(!showpass)}}
-                    img2Press={()=>{setvisible(!showpass)}}
                 />
 
                 <Text style={styles.forgetPass}>Forget Password</Text>

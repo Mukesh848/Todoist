@@ -40,9 +40,9 @@ export default function Login({ navigation, route }) {
                 <TextInputComp
                     value={pass}
                     placeholder="Password"
-                    secureTextEntry={true}
                     onChangeText={(val) => { setpass(val) }}
-                    img={imagePath.i_showpass}
+                    img1={imagePath.i_showpass}
+                    img2={imagePath.i_hidepass}
                 />
                 <Text style={styles.forgetText}>Forget Password</Text>
             </View>

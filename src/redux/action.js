@@ -1,7 +1,12 @@
 import types from "./types"
 
-export function addtodo(){
+export function addtodo(data1,data2 ){
 return{
-    type:types.ADD
+    type:types.ADD ,
+    payload: 
+        { title:data1,
+            notes:data2
+    }
+         
 }
 }
