@@ -7,19 +7,9 @@ import * as Progress from 'react-native-progress';
 import colorPath from '../../constants/colorPath'
 import { moderateScale } from '../../styles/responsiveSize'
 import { useSelector } from 'react-redux'
-import store from '../../redux/store'
 
 export default function Home({ navigation, route }) {
-  const rdata=useSelector(state => state.userdata)
- 
-  const [data, setdata] = useState([])
-  const fetchdata = () => {
-    const paramdata = route.params
-    if (!!paramdata) { setdata(paramdata) }
-  }
-  useEffect(() => {
-    fetchdata()
-  }, [route?.params])
+  const rdata = useSelector(state => state.userdata)
 
   const renderItemfun = ({ item, index }) => {
     return (
@@ -53,7 +43,7 @@ export default function Home({ navigation, route }) {
             size={100}
             indeterminate={false}
             color={colorPath.PURPLE}
-            progress={moderateScale(0.7)}
+            progress={moderateScale(0.5)}
             showsText={true}
             thickness={moderateScale(15)}
             unfilledColor={colorPath.LIGHTGREY}

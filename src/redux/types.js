@@ -1,3 +1,4 @@
 export default {
-    ADD:'addTodo'
+    ADD:'addTodo',
+    TIME:'products'
 }

@@ -12,8 +12,6 @@ import imagePath from '../../constants/imagePath'
 export default function Login({ navigation, route }) {
     const [email, setmail] = useState('')
     const [pass, setpass] = useState('')
-    const [showpass, setvisible] = useState(false)
-
     const onLogin = () => {
         if (email === '') {
             alert("Please enter your email")
@@ -24,7 +22,7 @@ export default function Login({ navigation, route }) {
             return;
         }
         if (pass !== '' && email !== '') {
-            navigation.navigate(Navigationstrings.HOME)
+            navigation.navigate(Navigationstrings.BTABS)
         }
     }
     const onSignup = () => { navigation.navigate(Navigationstrings.SIGNUP) }

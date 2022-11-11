@@ -15,4 +15,6 @@ export default{
     i_tick2:require('../assets/images/iOS/ic_tick.png'),
     i_showpass:require('../assets/images/iOS/eyeopen.png'),
     i_hidepass:require('../assets/images/iOS/hidepassword.png'),
+    i_redheart:require('../assets/images/iOS/redHeart.png'),
+    i_whiteheart:require('../assets/images/iOS/emptyHeart.png'),
 }

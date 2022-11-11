@@ -1,7 +1,8 @@
 import types from "./types";
 
 let init_state={
-    userdata:[]
+    userdata:[],
+    productdata:[]
 }
 
 export function Addreducer(state = init_state, action) {   
@@ -12,7 +13,6 @@ export function Addreducer(state = init_state, action) {
         {
         let dataaction=action.payload
         let newArr=[...state.userdata,dataaction]
-        console.log("data in new modified array")
         return {...state ,userdata:newArr}
         }
         default:

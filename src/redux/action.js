@@ -6,7 +6,6 @@ return{
     payload: 
         { title:data1,
             notes:data2
-    }
-         
+    }    
 }
 }

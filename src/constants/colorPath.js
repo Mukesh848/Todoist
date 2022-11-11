@@ -5,4 +5,7 @@ export default
     GREY:"#A1A9A9",
     LIGHTGREY:"#F1F1F3",
     BLUE:"#5b70a4",
-    GREEN:'#5ea655'}
+    GREEN:'#5ea655',
+    LIGHTPURPLE:"#c9c4cf",
+    DARKPURPLE:"#361261"   
+}

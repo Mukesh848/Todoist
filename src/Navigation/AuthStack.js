@@ -10,7 +10,7 @@ export default function AuthStack(Stack) {
         <Stack.Screen name={Navigationstrings.SIGNUP} component={Screens.Signup} />
         <Stack.Screen name={Navigationstrings.LOGIN} component={Screens.Login} />
         <Stack.Screen name={Navigationstrings.ADD_TASK} component={Screens.Addtask} />
-
+        <Stack.Screen name={Navigationstrings.BTABS} component={Screens.Bottomtabs}/>
     </>
   )
 }

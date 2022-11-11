@@ -55,7 +55,6 @@ export const styles = StyleSheet.create({
     },
     dockView: {
         flex: 1,
-        // backgroundColor:colorPath.BLUE,
         justifyContent: 'flex-end',
         marginHorizontal: moderateScale(16),
         marginTop: moderateScaleVertical(16)
@@ -98,7 +97,7 @@ export const styles = StyleSheet.create({
     },
     flatview: {
         marginTop: verticalScale(20),
-        padding: moderateScale(10),
+        padding: moderateScale(20),
         backgroundColor: colorPath.WHITE,
         borderRadius: moderateScale(10),
         marginHorizontal: moderateScale(16)
