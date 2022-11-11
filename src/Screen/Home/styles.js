@@ -115,5 +115,7 @@ export const styles = StyleSheet.create({
         flexDirection: 'row',
         backgroundColor: colorPath.WHITE,
         margin: moderateScale(16)
+    },
+    Timeperiodbtn:{
     }
 });

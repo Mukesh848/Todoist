@@ -56,9 +56,9 @@ export default function Home({ navigation, route }) {
 
       </View>
       <View style={styles.TimeperiodView}>
-        <Text style={styles.Timeperiod}>Daily</Text>
-        <Text style={styles.Timeperiod}>Monthly</Text>
-        <Text style={styles.Timeperiod}>Weekly</Text>
+       <TouchableOpacity style={styles.Timeperiodbtn}><Text style={styles.Timeperiod}>Daily</Text></TouchableOpacity>
+       <TouchableOpacity style={styles.Timeperiodbtn}><Text style={styles.Timeperiod}>Monthly</Text></TouchableOpacity>
+       <TouchableOpacity style={styles.Timeperiodbtn}><Text style={styles.Timeperiod}>Weekly</Text></TouchableOpacity>
       </View>
       <View style={styles.heading}>
         <Text style={styles.headerText1}>Reminders</Text>

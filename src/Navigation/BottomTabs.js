@@ -69,12 +69,12 @@ const styles = StyleSheet.create(
         alignSelf: 'center',
         alignItems: 'center',
         justifyContent: 'center',
-        paddingTop: moderateScale(26)
+        paddingTop: moderateScaleVertical(26)
       }
     },
     add_icon: {
       position: 'absolute',
-      bottom: moderateScale(20)
+      bottom:verticalScale(20)
     }
   }
 )
