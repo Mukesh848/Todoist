@@ -39,7 +39,6 @@ export default function Addtask({ navigation, route }) {
     }
     return (
         <SafeAreaView style={styles.container}>
-
             <View style={styles.headerView}>
                 <TouchableOpacity style={styles.backImage} onPress={onBack}><Image source={imagePath.i_back}>
                 </Image></TouchableOpacity>

@@ -5,7 +5,7 @@ export async function apiReq(
     method,
 ) {
 
-    return new Promise(function (resolve, reject) {
+    return new Promise(function(resolve,reject){
         axios[method](endPoint)
             .then(result => {
                 console.log("my resluult++++++", result)
@@ -17,18 +17,7 @@ export async function apiReq(
                 return resolve(data);
             })
             .catch(error => {
-                console.log(error)
-                console.log(error && error.response, 'the error respne')
-                if (error && error.response && error.response.status === 401) {
-                }
-                if (error && error.response && error.response.data) {
-                    if (!error.response.data.message) {
-                        return reject({ ...error.response.data, msg: error.response.data.message || "Network Error" })
-                    }
-                    return reject(error.response.data)
-                } else {
-                    return reject({ message: "Network Error", msg: "Network Error" });
-                }
+                console.log(error ,"erororrrrrrrrrr")
             });
     });
 }

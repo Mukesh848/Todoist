@@ -9,7 +9,8 @@ import { moderateScale } from '../../styles/responsiveSize'
 import { useSelector } from 'react-redux'
 
 export default function Home({ navigation, route }) {
-  const rdata = useSelector(state => state.userdata)
+  const rdata = useSelector(state => state.Addreducer.userdata)
+  console.log("data in home screen",rdata)
 
   const renderItemfun = ({ item, index }) => {
     return (
