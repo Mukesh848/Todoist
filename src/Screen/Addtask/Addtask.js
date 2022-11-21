@@ -18,7 +18,7 @@ export default function Addtask({ navigation, route }) {
     let onmodalclick=() =>
     {       setmodal(!openmodal)
             store.dispatch(addtodo(title,notes))
-            // navigation.navigate(Navigationstrings.HOME)
+  
     }
 
     let onAddbtn = () => {

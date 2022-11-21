@@ -7,5 +7,6 @@ export default {
     PROFILE:"profileScreen",
     CALENDER:"calenderScreen",
     TIME:"TimeScreen",
-    BTABS:"bottomTabs"
+    BTABS:"bottomTabs",
+    IDETAILS:"itemDetails"
 }

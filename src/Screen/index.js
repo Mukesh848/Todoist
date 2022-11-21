@@ -7,6 +7,8 @@ export {default as Time } from "./Time/Time"
 export {default as Profile } from "./Profile/Profile"
 export {default as Calender } from "./Calender/Calender"
 export {default as Bottomtabs} from "../Navigation/BottomTabs"
+export {default as Itemdetails} from "./Itemdetails/Itemdetails"
+
 
 
 

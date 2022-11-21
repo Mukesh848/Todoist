@@ -1,8 +1,7 @@
-import types from "./types";
+import types from "../types";
 
 let init_state={
     userdata:[],
-    productdata:[]
 }
 
 export function Addreducer(state = init_state, action) {   
